@@ -1,0 +1,66 @@
+*{
+    box-sizing: border-box;
+}
+html{background-color: #FBEEC1;}
+
+body{
+    font-family:'Libre Baskerville', serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display:flex;
+    width: 90vw;
+}
+
+.panel{
+    background-size: cover; /*auto 100% change to background-size: cover to preserve rounded corners on large screens*/
+    background-position: center;
+    background-repeat: no-repeat;
+    height:80vh;
+    border-radius: 50px; /*Make the picture have curve around the corner*/
+    color: #fff;
+    cursor: pointer; /*when the mouse go over will appear as a pointer*/
+    flex: 0.5;
+    margin:10px; /*Make the pic have spaces to each other*/
+    position: relative;
+    transition: all 0.7s ease-in;
+}
+
+.panel h3{
+    font-size: 24px;
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+    margin:0;
+    opacity: 0; /*Make the text invisible*/
+    color: orange;
+    background-color: antiquewhite;
+    text-decoration: underline;
+    
+}
+
+.panel.active{
+    flex: 2;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px){
+    .container{
+        width:100vw;
+    }
+
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5)
+    {
+        display: none;
+    }}/*Any style I put in here is only take affect when the screen is under 480px*/
